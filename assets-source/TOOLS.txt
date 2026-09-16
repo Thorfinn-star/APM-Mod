@@ -1,0 +1,1 @@
+Sword, pickaxe, axe, shovel and hoe use custom APM silhouettes.
