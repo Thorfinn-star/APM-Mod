@@ -1,0 +1,1 @@
+No temporary placeholder art should ship in the V2 build.
