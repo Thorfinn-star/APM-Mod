@@ -13,19 +13,17 @@ import org.slf4j.LoggerFactory;
 public final class ApmMod implements ModInitializer {
     public static final String MOD_ID = "apm";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-
     public static Identifier id(String path) { return Identifier.fromNamespaceAndPath(MOD_ID, path); }
-
     @Override public void onInitialize() {
         ApmBlocks.initialize();
         ApmItems.initialize();
+        ApmWorldgen.initialize();
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             if ((server.getTickCount() % 20) != 0) return;
             for (ServerPlayer p : server.getPlayerList().getPlayers()) applyArmorEffects(p);
         });
         LOGGER.info("APM Mod 0.1.0 loaded for Minecraft 26.2");
     }
-
     private static void applyArmorEffects(ServerPlayer p) {
         boolean helmet = p.getItemBySlot(EquipmentSlot.HEAD).is(ApmItems.APM_HELMET);
         boolean chest = p.getItemBySlot(EquipmentSlot.CHEST).is(ApmItems.APM_CHESTPLATE);
