@@ -1,0 +1,1 @@
+Worn armor textures: humanoid, humanoid_baby, humanoid_leggings.
