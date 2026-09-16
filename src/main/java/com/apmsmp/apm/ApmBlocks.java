@@ -16,8 +16,8 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public final class ApmBlocks {
-    public static final Block APM_ORE = register("apm_ore", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_DIAMOND_ORE).strength(5.0F, 7.0F).sound(SoundType.DEEPSLATE));
-    public static final Block APM_BLOCK = register("apm_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERITE_BLOCK).strength(50.0F, 1200.0F).sound(SoundType.NETHERITE_BLOCK));
+    public static final Block APM_ORE = register("apm_ore", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_DIAMOND_ORE).strength(4.5F, 6.0F).sound(SoundType.DEEPSLATE));
+    public static final Block APM_BLOCK = register("apm_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).strength(5.0F, 6.0F).sound(SoundType.METAL));
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties props) {
         Identifier id = ApmMod.id(name);
