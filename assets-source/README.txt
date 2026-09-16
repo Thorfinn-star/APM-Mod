@@ -1,0 +1,1 @@
+APM V2 pixel textures generated specifically for APM SMP.
