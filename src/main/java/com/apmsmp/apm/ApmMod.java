@@ -31,7 +31,7 @@ public final class ApmMod implements ModInitializer {
         boolean boots = p.getItemBySlot(EquipmentSlot.FEET).is(ApmItems.APM_BOOTS);
         if (helmet) p.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 240, 0, true, false, true));
         if (chest) p.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 60, 0, true, false, true));
-        if (boots || legs) p.addEffect(new MobEffectInstance(MobEffects.SPEED, 60, 0, true, false, true));
-        if (helmet && chest && legs && boots) p.addEffect(new MobEffectInstance(MobEffects.SPEED, 60, 1, true, false, true));
+        // Balanced movement: only the complete set grants Speed I. No Speed II stacking.
+        if (helmet && chest && legs && boots) p.addEffect(new MobEffectInstance(MobEffects.SPEED, 60, 0, true, false, true));
     }
 }
