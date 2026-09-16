@@ -1,0 +1,1 @@
+All APM V2 texture binaries are intended to replace the V1 placeholders before release.
