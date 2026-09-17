@@ -1,0 +1,1 @@
+APM textures use vanilla Minecraft silhouettes recolored with the APM anthracite/emerald palette.
