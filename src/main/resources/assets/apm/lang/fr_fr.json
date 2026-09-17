@@ -1,15 +1,15 @@
 {
   "item.apm.raw_apm": "APM brut",
-  "item.apm.apm_ingot": "Lingot d'APM",
-  "item.apm.apm_sword": "Épée en APM",
-  "item.apm.apm_pickaxe": "Pioche en APM",
-  "item.apm.apm_axe": "Hache en APM",
-  "item.apm.apm_shovel": "Pelle en APM",
-  "item.apm.apm_hoe": "Houe en APM",
-  "item.apm.apm_helmet": "Casque en APM",
-  "item.apm.apm_chestplate": "Plastron en APM",
-  "item.apm.apm_leggings": "Jambières en APM",
-  "item.apm.apm_boots": "Bottes en APM",
-  "block.apm.apm_ore": "Minerai d'APM",
-  "block.apm.apm_block": "Bloc d'APM"
+  "item.apm.apm_ingot": "Lingot d’APM",
+  "item.apm.apm_sword": "Épée d’APM",
+  "item.apm.apm_pickaxe": "Pioche d’APM",
+  "item.apm.apm_axe": "Hache d’APM",
+  "item.apm.apm_shovel": "Pelle d’APM",
+  "item.apm.apm_hoe": "Houe d’APM",
+  "item.apm.apm_helmet": "Casque d’APM",
+  "item.apm.apm_chestplate": "Plastron d’APM",
+  "item.apm.apm_leggings": "Jambières d’APM",
+  "item.apm.apm_boots": "Bottes d’APM",
+  "block.apm.apm_ore": "Minerai d’APM",
+  "block.apm.apm_block": "Bloc d’APM"
 }
