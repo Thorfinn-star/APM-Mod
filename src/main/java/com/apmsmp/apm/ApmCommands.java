@@ -2,7 +2,6 @@ package com.apmsmp.apm;
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.commands.Commands;
-import net.minecraft.commands.Permissions;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -18,17 +17,20 @@ public final class ApmCommands {
     public static void initialize() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) ->
             dispatcher.register(Commands.literal("apmlocate")
-                .requires(source -> source.permissions().hasPermission(Permissions.COMMANDS_MODERATOR))
                 .executes(context -> locate(context.getSource().getPlayerOrException()))));
     }
 
     private static int locate(ServerPlayer player) {
+        if (!player.isCreative() && !player.isSpectator()) {
+            player.sendSystemMessage(Component.literal("/apmlocate est une commande de diagnostic : passe en créatif ou spectateur pour l’utiliser."));
+            return 0;
+        }
+
         ServerLevel level = player.level();
         BlockPos origin = player.blockPosition();
         BlockPos.MutableBlockPos cursor = new BlockPos.MutableBlockPos();
         BlockPos best = null;
         long bestDistance = Long.MAX_VALUE;
-
         int minX = origin.getX() - MAX_RADIUS;
         int maxX = origin.getX() + MAX_RADIUS;
         int minZ = origin.getZ() - MAX_RADIUS;
