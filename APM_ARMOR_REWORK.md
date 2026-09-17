@@ -1,0 +1,1 @@
+APM armor visual target: dense anthracite plate coverage with emerald energy accents, using the existing vanilla humanoid equipment model only. No custom model geometry.
