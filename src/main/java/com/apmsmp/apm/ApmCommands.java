@@ -2,6 +2,7 @@ package com.apmsmp.apm;
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.commands.Commands;
+import net.minecraft.commands.Permissions;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -17,7 +18,7 @@ public final class ApmCommands {
     public static void initialize() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) ->
             dispatcher.register(Commands.literal("apmlocate")
-                .requires(source -> source.hasPermission(2))
+                .requires(source -> source.permissions().hasPermission(Permissions.COMMANDS_MODERATOR))
                 .executes(context -> locate(context.getSource().getPlayerOrException()))));
     }
 
@@ -36,12 +37,10 @@ public final class ApmCommands {
         for (int chunkX = minX >> 4; chunkX <= maxX >> 4; chunkX++) {
             for (int chunkZ = minZ >> 4; chunkZ <= maxZ >> 4; chunkZ++) {
                 if (!level.hasChunk(chunkX, chunkZ)) continue;
-
                 int startX = Math.max(minX, chunkX << 4);
                 int endX = Math.min(maxX, (chunkX << 4) + 15);
                 int startZ = Math.max(minZ, chunkZ << 4);
                 int endZ = Math.min(maxZ, (chunkZ << 4) + 15);
-
                 for (int x = startX; x <= endX; x++) {
                     for (int z = startZ; z <= endZ; z++) {
                         for (int y = MIN_Y; y <= MAX_Y; y++) {
@@ -64,7 +63,6 @@ public final class ApmCommands {
             player.sendSystemMessage(Component.literal("Aucun minerai d’APM trouvé dans les chunks chargés à moins de " + MAX_RADIUS + " blocs. Va dans des chunks neufs puis réessaie /apmlocate."));
             return 0;
         }
-
         BlockPos found = best;
         int horizontalDistance = (int)Math.sqrt(bestDistance);
         player.sendSystemMessage(Component.literal("Minerai d’APM trouvé : X " + found.getX() + " Y " + found.getY() + " Z " + found.getZ() + " (≈ " + horizontalDistance + " blocs)"));
