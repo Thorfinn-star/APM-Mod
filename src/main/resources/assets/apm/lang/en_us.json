@@ -1,0 +1,15 @@
+{
+  "item.apm.raw_apm": "Raw APM",
+  "item.apm.apm_ingot": "APM Ingot",
+  "item.apm.apm_sword": "APM Sword",
+  "item.apm.apm_pickaxe": "APM Pickaxe",
+  "item.apm.apm_axe": "APM Axe",
+  "item.apm.apm_shovel": "APM Shovel",
+  "item.apm.apm_hoe": "APM Hoe",
+  "item.apm.apm_helmet": "APM Helmet",
+  "item.apm.apm_chestplate": "APM Chestplate",
+  "item.apm.apm_leggings": "APM Leggings",
+  "item.apm.apm_boots": "APM Boots",
+  "block.apm.apm_ore": "APM Ore",
+  "block.apm.apm_block": "Block of APM"
+}
