@@ -82,6 +82,7 @@ public final class AdvancementDatabaseLogger {
                 if (!entry.getValue().isJsonObject()) continue;
                 JsonObject progress = entry.getValue().getAsJsonObject();
                 if (!progress.has("done") || !progress.get("done").getAsBoolean()) continue;
+                if (entry.getKey().startsWith("minecraft:recipes/")) continue;
                 Timestamp earned = completionTime(progress);
                 insert(cn, uuid, playerName, entry.getKey(), entry.getKey(), earned);
             }
