@@ -3,7 +3,8 @@
   "package": "com.apmsmp.apm.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "PlayerAdvancementsMixin"
+    "PlayerAdvancementsMixin",
+    "ExplosionProtectionMixin"
   ],
   "injectors": {
     "defaultRequire": 1
