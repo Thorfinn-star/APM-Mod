@@ -49,6 +49,25 @@ public final class AdvancementDatabaseLogger {
         if (executor != null) executor.shutdownNow();
     }
 
+    public static void recordLive(String uuid, String playerName, String advancement) {
+        if (config == null || !config.enabled || executor == null || executor.isShutdown()) return;
+        if (advancement.contains(":recipes/")) return;
+        executor.execute(() -> {
+            try {
+                Class.forName("org.mariadb.jdbc.Driver");
+                String url = "jdbc:mariadb://" + config.host + ":" + config.port + "/" + config.database
+                        + "?connectTimeout=5000&socketTimeout=10000&useUnicode=true&characterEncoding=utf8";
+                try (Connection cn = DriverManager.getConnection(url, config.username, config.password)) {
+                    ensureSchema(cn);
+                    insert(cn, uuid, playerName, advancement, advancement, Timestamp.from(Instant.now()));
+                }
+                LOGGER.info("Succes enregistre en direct: {} -> {}", playerName, advancement);
+            } catch (Throwable t) {
+                LOGGER.error("Impossible d'enregistrer le succes en direct {} pour {}", advancement, playerName, t);
+            }
+        });
+    }
+
     private static void syncSafe() {
         try { sync(); }
         catch (Throwable t) { LOGGER.error("Erreur pendant la synchronisation des succes", t); }
