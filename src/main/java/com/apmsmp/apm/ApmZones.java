@@ -44,7 +44,7 @@ public final class ApmZones {
         );
 
         PlayerBlockBreakEvents.BEFORE.register((level, player, pos, state, blockEntity) ->
-            bypass(player) || !isProtected((ServerLevel) level, pos)
+            (player instanceof ServerPlayer serverPlayer && bypass(serverPlayer)) || !isProtected((ServerLevel) level, pos)
         );
 
         UseBlockCallback.EVENT.register((player, level, hand, hit) -> {
@@ -73,7 +73,7 @@ public final class ApmZones {
     }
 
     private static boolean bypass(ServerPlayer player) {
-        return player.getServer() != null && player.getServer().getPlayerList().isOp(player.getGameProfile());
+        return player.level().getServer().getPlayerList().isOp(player.getGameProfile());
     }
 
     private static int addPoint(ServerPlayer player) {
