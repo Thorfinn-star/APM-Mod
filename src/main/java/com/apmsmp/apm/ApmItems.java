@@ -30,7 +30,7 @@ public final class ApmItems {
 
     private static Item simple(String name) { return register(name, Item::new, new Item.Properties()); }
     private static Item armor(String name, ArmorType type) {
-        return register(name, Item::new, new Item.Properties().humanoidArmor(ApmArmorMaterial.INSTANCE, type).durability(type.getDurability(ApmArmorMaterial.BASE_DURABILITY)));
+        return register(name, Item::new, new Item.Properties().humanoidArmor(ApmArmorMaterial.INSTANCE, type).durability(type.getDurability(ApmArmorMaterial.BASE_DURABILITY)).enchantable(18));
     }
     private static Item register(String name, Function<Item.Properties, Item> factory, Item.Properties props) {
         ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, ApmMod.id(name));
