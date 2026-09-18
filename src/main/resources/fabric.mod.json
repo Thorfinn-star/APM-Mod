@@ -8,7 +8,8 @@
   "license": "All-Rights-Reserved",
   "environment": "*",
   "entrypoints": {
-    "main": ["com.apmsmp.apm.ApmMod"]
+    "main": ["com.apmsmp.apm.ApmMod"],
+    "server": ["com.apmsmp.apm.AdvancementDatabaseEntrypoint"]
   },
   "depends": {
     "fabricloader": ">=0.19.5",
