@@ -19,6 +19,7 @@ public final class ApmMod implements ModInitializer {
         ApmItems.initialize();
         ApmWorldgen.initialize();
         ApmCommands.initialize();
+        ApmZones.initialize();
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             if ((server.getTickCount() % 20) != 0) return;
             for (ServerPlayer p : server.getPlayerList().getPlayers()) applyArmorEffects(p);
