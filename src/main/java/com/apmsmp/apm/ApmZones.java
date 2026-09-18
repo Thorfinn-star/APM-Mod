@@ -73,7 +73,7 @@ public final class ApmZones {
     }
 
     private static boolean bypass(ServerPlayer player) {
-        return player.level().getServer().getPlayerList().isOp(player.getGameProfile());
+        return player.level().getServer().getPlayerList().isOp(player.nameAndId());
     }
 
     private static int addPoint(ServerPlayer player) {
