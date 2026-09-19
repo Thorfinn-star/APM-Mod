@@ -15,11 +15,12 @@ public final class ApmCommands {
     private ApmCommands() {}
 
     public static void initialize() {
-        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) ->
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             dispatcher.register(Commands.literal("apmlocate")
                 .executes(context -> locate(context.getSource().getPlayerOrException())));
             dispatcher.register(Commands.literal("colisee")
-                .executes(context -> colisee(context.getSource().getPlayerOrException()))));
+                .executes(context -> colisee(context.getSource().getPlayerOrException())));
+        });
     }
 
     private static int colisee(ServerPlayer player) {
