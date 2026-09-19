@@ -17,7 +17,17 @@ public final class ApmCommands {
     public static void initialize() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) ->
             dispatcher.register(Commands.literal("apmlocate")
-                .executes(context -> locate(context.getSource().getPlayerOrException()))));
+                .executes(context -> locate(context.getSource().getPlayerOrException())));
+            dispatcher.register(Commands.literal("colisee")
+                .executes(context -> colisee(context.getSource().getPlayerOrException()))));
+    }
+
+    private static int colisee(ServerPlayer player) {
+        ServerLevel level = player.level().getServer().getLevel(net.minecraft.world.level.Level.OVERWORLD);
+        if (level == null) return 0;
+        player.teleportTo(level, -20.5, 98.0, -299.5, java.util.Set.of(), player.getYRot(), player.getXRot(), false);
+        player.sendSystemMessage(Component.literal("Téléporté au Colisée."));
+        return 1;
     }
 
     private static int locate(ServerPlayer player) {
