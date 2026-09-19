@@ -22,6 +22,7 @@ public final class ApmItems {
     public static final Item APM_AXE = register("apm_axe", p -> new AxeItem(APM_TOOL, 12.0F, -2.7F, p), new Item.Properties());
     public static final Item APM_SHOVEL = register("apm_shovel", p -> new ShovelItem(APM_TOOL, 7.0F, -2.7F, p), new Item.Properties());
     public static final Item APM_HOE = register("apm_hoe", p -> new HoeItem(APM_TOOL, -4.0F, 0.0F, p), new Item.Properties());
+    public static final Item APM_MACE = register("apm_mace", ApmMiningMaceItem::new, new Item.Properties().pickaxe(APM_TOOL, 1.0F, -2.8F));
 
     public static final Item APM_HELMET = armor("apm_helmet", ArmorType.HELMET);
     public static final Item APM_CHESTPLATE = armor("apm_chestplate", ArmorType.CHESTPLATE);
@@ -39,7 +40,7 @@ public final class ApmItems {
     }
     public static void initialize() {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(out -> { out.accept(RAW_APM); out.accept(APM_INGOT); });
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(out -> { out.accept(APM_PICKAXE); out.accept(APM_AXE); out.accept(APM_SHOVEL); out.accept(APM_HOE); });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(out -> { out.accept(APM_PICKAXE); out.accept(APM_AXE); out.accept(APM_SHOVEL); out.accept(APM_HOE); out.accept(APM_MACE); });
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT).register(out -> { out.accept(APM_SWORD); out.accept(APM_HELMET); out.accept(APM_CHESTPLATE); out.accept(APM_LEGGINGS); out.accept(APM_BOOTS); });
     }
     private ApmItems() {}
