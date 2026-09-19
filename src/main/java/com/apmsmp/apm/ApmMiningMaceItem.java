@@ -1,7 +1,7 @@
 package com.apmsmp.apm;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.Level;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -16,7 +16,7 @@ public class ApmMiningMaceItem extends Item {
     }
 
     @Override
-    public boolean mineBlock(ItemStack stack, ServerLevel level, BlockState state, BlockPos pos, LivingEntity miner) {
+    public boolean mineBlock(ItemStack stack, Level level, BlockState state, BlockPos pos, LivingEntity miner) {
         boolean result = super.mineBlock(stack, level, state, pos, miner);
         if (!(miner instanceof ServerPlayer player) || BREAKING.get()) return result;
 
