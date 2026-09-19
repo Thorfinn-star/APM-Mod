@@ -13,14 +13,14 @@ import net.minecraft.world.level.block.Block;
 
 public final class ApmItems {
     public static final TagKey<Block> INCORRECT_FOR_APM_TOOL = TagKey.create(Registries.BLOCK, ApmMod.id("incorrect_for_apm_tool"));
-    public static final ToolMaterial APM_TOOL = new ToolMaterial(INCORRECT_FOR_APM_TOOL, 2500, 11.0F, 5.5F, 18, ApmArmorMaterial.REPAIRS_APM);
+    public static final ToolMaterial APM_TOOL = new ToolMaterial(INCORRECT_FOR_APM_TOOL, 2500, 12.0F, 0.0F, 18, ApmArmorMaterial.REPAIRS_APM);
 
     public static final Item RAW_APM = simple("raw_apm");
     public static final Item APM_INGOT = simple("apm_ingot");
-    public static final Item APM_SWORD = register("apm_sword", Item::new, new Item.Properties().sword(APM_TOOL, 5.5F, -2.2F));
-    public static final Item APM_PICKAXE = register("apm_pickaxe", Item::new, new Item.Properties().pickaxe(APM_TOOL, 2.5F, -2.6F));
-    public static final Item APM_AXE = register("apm_axe", p -> new AxeItem(APM_TOOL, 7.5F, -2.8F, p), new Item.Properties());
-    public static final Item APM_SHOVEL = register("apm_shovel", p -> new ShovelItem(APM_TOOL, 2.5F, -2.8F, p), new Item.Properties());
+    public static final Item APM_SWORD = register("apm_sword", Item::new, new Item.Properties().sword(APM_TOOL, 10.0F, -2.15F));
+    public static final Item APM_PICKAXE = register("apm_pickaxe", Item::new, new Item.Properties().pickaxe(APM_TOOL, 7.0F, -2.55F));
+    public static final Item APM_AXE = register("apm_axe", p -> new AxeItem(APM_TOOL, 12.0F, -2.7F, p), new Item.Properties());
+    public static final Item APM_SHOVEL = register("apm_shovel", p -> new ShovelItem(APM_TOOL, 7.0F, -2.7F, p), new Item.Properties());
     public static final Item APM_HOE = register("apm_hoe", p -> new HoeItem(APM_TOOL, -4.0F, 0.0F, p), new Item.Properties());
 
     public static final Item APM_HELMET = armor("apm_helmet", ArmorType.HELMET);
