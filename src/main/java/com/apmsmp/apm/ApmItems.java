@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.Block;
 
 public final class ApmItems {
     public static final TagKey<Block> INCORRECT_FOR_APM_TOOL = TagKey.create(Registries.BLOCK, ApmMod.id("incorrect_for_apm_tool"));
-    public static final ToolMaterial APM_TOOL = new ToolMaterial(INCORRECT_FOR_APM_TOOL, 2500, 12.0F, 5.5F, 18, ApmArmorMaterial.REPAIRS_APM);
+    public static final ToolMaterial APM_TOOL = new ToolMaterial(INCORRECT_FOR_APM_TOOL, 2500, 12.0F, 4.5F, 18, ApmArmorMaterial.REPAIRS_APM);
 
     public static final Item RAW_APM = simple("raw_apm");
     public static final Item APM_INGOT = simple("apm_ingot");
