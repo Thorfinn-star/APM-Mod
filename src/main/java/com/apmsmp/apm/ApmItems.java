@@ -17,10 +17,10 @@ public final class ApmItems {
 
     public static final Item RAW_APM = simple("raw_apm");
     public static final Item APM_INGOT = simple("apm_ingot");
-    public static final Item APM_SWORD = register("apm_sword", Item::new, new Item.Properties().sword(APM_TOOL, 3.5F, -2.15F));
-    public static final Item APM_PICKAXE = register("apm_pickaxe", Item::new, new Item.Properties().pickaxe(APM_TOOL, 1.5F, -2.55F));
-    public static final Item APM_AXE = register("apm_axe", p -> new AxeItem(APM_TOOL, 5.5F, -2.7F, p), new Item.Properties());
-    public static final Item APM_SHOVEL = register("apm_shovel", p -> new ShovelItem(APM_TOOL, 2.0F, -2.7F, p), new Item.Properties());
+    public static final Item APM_SWORD = register("apm_sword", Item::new, new Item.Properties().sword(APM_TOOL, 5.5F, -2.15F));
+    public static final Item APM_PICKAXE = register("apm_pickaxe", Item::new, new Item.Properties().pickaxe(APM_TOOL, 2.5F, -2.55F));
+    public static final Item APM_AXE = register("apm_axe", p -> new AxeItem(APM_TOOL, 7.5F, -2.7F, p), new Item.Properties());
+    public static final Item APM_SHOVEL = register("apm_shovel", p -> new ShovelItem(APM_TOOL, 2.5F, -2.7F, p), new Item.Properties());
     public static final Item APM_HOE = register("apm_hoe", p -> new HoeItem(APM_TOOL, -4.0F, 0.0F, p), new Item.Properties());
 
     public static final Item APM_HELMET = armor("apm_helmet", ArmorType.HELMET);
