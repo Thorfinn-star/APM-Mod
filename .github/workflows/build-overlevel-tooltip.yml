@@ -2,7 +2,7 @@ name: Build Overlevel Tooltip
 
 on:
   push:
-    branches: ["build/overlevel-tooltip"]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
