@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "overlevel-tooltip",
+  "version": "\${version}",
+  "name": "Overlevel Tooltip",
+  "description": "Puts a red rounded background behind enchantment levels above their vanilla maximum.",
+  "environment": "client",
+  "license": "MIT",
+  "authors": ["ChatGPT"],
+  "depends": {
+    "minecraft": "~26.3",
+    "fabricloader": ">=0.19.5"
+  },
+  "mixins": [
+    "overlevel-tooltip.client.mixins.json"
+  ]
+}
