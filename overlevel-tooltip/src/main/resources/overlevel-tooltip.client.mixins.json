@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "fr.chatgpt.overleveltooltip.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "ClientTextTooltipMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
