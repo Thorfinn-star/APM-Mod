@@ -24,7 +24,6 @@ public final class WardenArmorItems {
                 .stacksTo(1)
                 .humanoidArmor(WardenArmorMaterial.INSTANCE, type)
                 .durability(unitDurability * WardenArmorMaterial.BASE_DURABILITY)
-                .enchantable(0)
                 .component(DataComponents.UNBREAKABLE, Unit.INSTANCE);
         return Registry.register(BuiltInRegistries.ITEM, id, new Item(properties));
     }
