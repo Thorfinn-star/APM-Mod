@@ -1,23 +1,29 @@
 package fr.chatgpt.wardenarmor;
 
 import java.util.Map;
-import net.minecraft.item.Item;
-import net.minecraft.item.equipment.ArmorMaterial;
-import net.minecraft.item.equipment.ArmorType;
-import net.minecraft.item.equipment.EquipmentAsset;
-import net.minecraft.item.equipment.EquipmentAssets;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
+
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.world.item.equipment.EquipmentAssets;
+import net.minecraft.sounds.SoundEvents;
 
 public final class WardenArmorMaterial {
     public static final int BASE_DURABILITY = 37;
-    public static final RegistryKey<EquipmentAsset> ASSET_KEY =
-            RegistryKey.of(EquipmentAssets.ROOT_ID, Identifier.of(WardenInfectionArmor.MOD_ID, "warden_infection"));
+
+    public static final ResourceKey<EquipmentAsset> ASSET_KEY =
+            ResourceKey.create(EquipmentAssets.ROOT_ID,
+                    Identifier.fromNamespaceAndPath(WardenInfectionArmor.MOD_ID, "warden_infection"));
+
     public static final TagKey<Item> REPAIR_TAG =
-            TagKey.of(Registries.ITEM.getKey(), Identifier.of("minecraft", "repairs_netherite_armor"));
+            TagKey.create(Registries.ITEM,
+                    Identifier.fromNamespaceAndPath("minecraft", "repairs_netherite_armor"));
 
     public static final ArmorMaterial INSTANCE = new ArmorMaterial(
             BASE_DURABILITY,
@@ -34,5 +40,6 @@ public final class WardenArmorMaterial {
             REPAIR_TAG,
             ASSET_KEY
     );
+
     private WardenArmorMaterial() {}
 }
