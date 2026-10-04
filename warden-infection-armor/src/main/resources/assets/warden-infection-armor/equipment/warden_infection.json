@@ -1,0 +1,7 @@
+{
+  "layers": {
+    "humanoid": [{"texture": "warden-infection-armor:warden_infection"}],
+    "humanoid_baby": [{"texture": "warden-infection-armor:warden_infection"}],
+    "humanoid_leggings": [{"texture": "warden-infection-armor:warden_infection"}]
+  }
+}
