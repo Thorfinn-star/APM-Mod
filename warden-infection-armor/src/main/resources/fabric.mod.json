@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "warden-infection-armor",
+  "version": "${version}",
+  "name": "Warden Infection Armor",
+  "description": "The unique Warden/Sculk God Armor for the APM SMP.",
+  "environment": "*",
+  "license": "All Rights Reserved",
+  "authors": ["APM SMP"],
+  "entrypoints": {
+    "main": ["fr.chatgpt.wardenarmor.WardenInfectionArmor"]
+  },
+  "depends": {
+    "minecraft": "~26.3",
+    "fabricloader": ">=0.19.5",
+    "fabric-api": ">=0.161.0+26.3"
+  }
+}
