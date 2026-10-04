@@ -33,7 +33,7 @@ public final class WardenArmorMaterial {
                     ArmorType.LEGGINGS, 7,
                     ArmorType.BOOTS, 4
             ),
-            0,
+            1,
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             3.0F,
             0.1F,
